@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Amor: Allysson & Nathalia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Nosso Amor: Allysson & Nathalia</h1>
+        <p>Uma celebração da nossa história, no nosso Dia dos Namorados.</p>
+    </header>
+
+    <section class="welcome-section">
+        <div class="container">
+            <h2>Bem-Vinda, Meu Amor!</h2>
+            <p>Minha querida Nathalia, preparei este cantinho especial para revivermos juntos os momentos que construíram a nossa linda história até aqui. Cada foto, cada lembrança, é um tesouro que guardo com muito carinho. Feliz Dia dos Namorados, meu amor!</p>
+            <img src="./img/primeira_img.jpg" alt="Allysson e Natália juntos e sorrindo">
+        </div>
+    </section>
+
+    <section class="countdown-section">
+        <div class="container">
+            <h2>Nossa História em Dias:</h2>
+            <p id="days-together">Carregando...</p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <h2>Nossas Memórias Inesquecíveis</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="./img/primeiro_enconto.jpg" alt="Foto do primeiro encontro de Allysson e Natália">
+                <div class="gallery-item-caption">
+                    <p>Nosso primeiro encontro, o início de tudo! ❤️</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img/primeira_volta_moto.jpg" alt="Allysson e Natália em um passeio de moto pela cidade">
+                <div class="gallery-item-caption">
+                    <p>Aquele dia especial que passamos na Cidade. Inesquecível!</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img/toda-vez.jpg" alt="Natália e Allysson em frente ao CMO">
+                <div class="gallery-item-caption">
+                    <p>Toda vez que passava na frente do CMO você falava: "Vamos tirar foto!"</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img/momento_simples.png" alt="Momento descontraído de Allysson e Natália">
+                <div class="gallery-item-caption">
+                    <p>Até os momentos mais simples são mágicos ao seu lado.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="./img/foto1.jpg" alt="Memória especial de Allysson e Natália 1">
+            </div>
+            <div class="gallery-item">
+                <img src="./img/foto2.jpg" alt="Memória especial de Allysson e Natália 2">
+            </div>
+            <div class="gallery-item">
+                <img src="./img/foto3.jpg" alt="Memória especial de Allysson e Natália 3">
+            </div>
+            <div class="gallery-item">
+                <img src="./img/foto4.jpg" alt="Memória especial de Allysson e Natália 4">
+            </div>
+        </div>
+    </section>
+
+    <section class="message-section">
+        <div class="container">
+            <h2>Para Você, Meu Amor</h2>
+            <p>Nathalia, você chegou na minha vida e a transformou por completo. Cada dia ao seu lado é um presente, uma nova página da nossa linda história. Sua alegria, seu carinho e sua força me inspiram a ser uma pessoa melhor. Com você, eu descobri o verdadeiro significado de amar e ser amado.</p>
+            <p>Mal posso esperar para viver cada novo momento, cada nova aventura ao seu lado. Sou grato por cada sorriso, cada abraço, cada conversa. Você é a mulher da minha vida, meu porto seguro, meu grande amor. Feliz Dia dos Namorados, hoje e sempre!</p>
+            <p style="text-align: right; margin-top: 30px; font-style: italic;">Com todo o meu amor, para sempre,<br>Allysson</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Com todo o meu amor, Allysson.</p>
+        <p>Criado com carinho para Nathalia.</p>
+    </footer>
+
+    <script>
+        // Função para calcular os dias juntos
+        function calculateDays() {
+            const startDate = new Date('2024-05-01'); // Data de início: 01/05/2024 (Ano-Mês-Dia)
+            const today = new Date();
+            
+            // Zera as horas, minutos, segundos e milissegundos para comparar apenas as datas
+            const startDateOnly = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+            const todayOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
+            const timeDiff = todayOnly.getTime() - startDateOnly.getTime();
+            // Calcula a diferença em dias. Adiciona 1 para incluir o dia inicial.
+            // Se startDate é 01/05 e today é 01/05, queremos mostrar "1 dia juntos".
+            const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24)); 
+            
+            document.getElementById('days-together').innerHTML = `${daysDiff} ${daysDiff === 1 ? 'dia juntos!' : 'dias juntos!'} <span>E contando...</span>`;
+        }
+
+        // Chama a função quando a página carrega
+        window.onload = calculateDays;
+    </script>
+
+</body>
+</html>
